@@ -307,6 +307,73 @@ p{font-size:18px;}
 .nav-links{flex-direction:column;}
 }
 
+
+  .search-box {
+    position: relative;
+    width: min(550px, 90%);
+    margin: 25px auto;
+}
+
+.search-box input {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px 0 48px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.search-box input:focus {
+    border-color: #0b5d35;
+    box-shadow: 0 0 0 3px rgba(11,93,53,.15);
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 8px;
+    font-size: 28px;
+    z-index: 2;
+}
+
+#searchResults {
+    position: absolute;
+    top: 58px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    overflow: hidden;
+    display: none;
+    z-index: 9999;
+}
+
+.search-result {
+    display: block;
+    padding: 12px 18px;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+.search-result:hover {
+    background: #f0f7f3;
+}
+
+.search-result strong {
+    display: block;
+    color: #0b5d35;
+    font-size: 18px;
+}
+
+.search-result small {
+    color: #666;
+}
 </style>
 </head>
 
@@ -337,6 +404,17 @@ WHOM PARADISE (جَنَّة) WAS PROMISED:-
 </ul>
 </nav>
 
+<div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input
+        type="search"
+        id="siteSearch"
+        placeholder="Search"
+        autocomplete="off"
+    >
+    <div id="searchResults"></div>
+</div>
+  
 <div class="container">
 
 <div class="summary-card" style="border:2px solid #d4af37;">
@@ -448,5 +526,118 @@ contributions to the early Muslim community. Their promise of Paradise is record
 </footer>
 
 <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+
+<script>
+const pages = [
+    {
+        title: "Home",
+        description: "The Ten Islamic Luminaries",
+        url: "index.html"
+    },
+    {
+        title: "Hadith",
+        description: "The full Hadith and explanation",
+        url: "hadith.html"
+    },
+    {
+        title: "Abu Bakr",
+        description: "Hazrat Abu Bakr As-Siddiq (RA)",
+        url: "abu-bakr.html"
+    },
+    {
+        title: "Umar",
+        description: "Hazrat Umar Ibn Al-Khattab (RA)",
+        url: "umar.html"
+    },
+    {
+        title: "Uthman",
+        description: "Hazrat Uthman Ibn Affan (RA)",
+        url: "uthman.html"
+    },
+    {
+        title: "Ali",
+        description: "Hazrat Ali Ibn Abi Talib (RA)",
+        url: "ali.html"
+    },
+    {
+        title: "Talha",
+        description: "Hazrat Talha Ibn Ubaydullah (RA)",
+        url: "talha.html"
+    },
+    {
+        title: "Zubair",
+        description: "Hazrat Zubair Ibn Al-Awwam (RA)",
+        url: "zubair.html"
+    },
+    {
+        title: "Abdur Rahman",
+        description: "Hazrat Abdur Rahman Ibn Awf (RA)",
+        url: "abdur-rahman.html"
+    },
+    {
+        title: "Sa'd",
+        description: "Hazrat Sa'd Ibn Abi Waqqas (RA)",
+        url: "sad.html"
+    },
+    {
+        title: "Sa'id",
+        description: "Hazrat Sa'id Ibn Zayd (RA)",
+        url: "said.html"
+    },
+    {
+        title: "Abu Ubaidah",
+        description: "Hazrat Abu Ubaidah Ibn Al-Jarrah (RA)",
+        url: "abu-ubaidah.html"
+    },
+    {
+        title: "FAQ",
+        description: "Frequently Asked Questions",
+        url: "faq.html"
+    }
+];
+
+const searchInput = document.getElementById("siteSearch");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", function () {
+
+    const query = this.value.trim().toLowerCase();
+
+    if (!query) {
+        searchResults.style.display = "none";
+        searchResults.innerHTML = "";
+        return;
+    }
+
+    const results = pages.filter(page =>
+        page.title.toLowerCase().includes(query) ||
+        page.description.toLowerCase().includes(query)
+    );
+
+    if (results.length === 0) {
+        searchResults.innerHTML = `
+            <div class="search-result">
+                No results found
+            </div>
+        `;
+    } else {
+        searchResults.innerHTML = results.map(page => `
+            <a class="search-result" href="${page.url}">
+                <strong>${page.title}</strong>
+                <small>${page.description}</small>
+            </a>
+        `).join("");
+    }
+
+    searchResults.style.display = "block";
+});
+
+document.addEventListener("click", function(e) {
+    if (!e.target.closest(".search-box")) {
+        searchResults.style.display = "none";
+    }
+});
+</script>
+  
 </body>
 </html>
