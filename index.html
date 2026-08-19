@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -351,6 +351,8 @@ p{font-size:18px;}
     overflow: hidden;
     display: none;
     z-index: 9999;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .search-result {
@@ -488,29 +490,29 @@ WHOM PARADISE (جَنَّة) WAS PROMISED:-
 <section id="faq">
 <h2 class="person-title">Frequently Asked Questions</h2>
 
-<h3 style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">1. What does Al-Ashara Al-Mubashshara mean?</h3>
+<h3 id="faq-1" style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">1. What does Al-Ashara Al-Mubashshara mean?</h3>
 <p>The Arabic phrase Al-Ashara Al-Mubashshara (العشرة المبشرة) translates to "The Ten Who Were Given Glad Tidings," referring to the ten companions who received the good news of
 Paradise directly, a rare and unique honor among the Sahabah.</p>
 
-<h3 style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">2. Who are the Al-Ashara Al-Mubashshara (The Ten Islamic Luminaries)?</h3>
+<h3 id="faq-2" style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">2. Who are the Al-Ashara Al-Mubashshara (The Ten Islamic Luminaries)?</h3>
 <p>Al-Ashara Al-Mubashshara (العشرة المبشرة) refers to ten companions of Prophet Muhammad who were given the glad tidings of Paradise while they were still alive on earth.
 They are: Abu Bakr, Umar Ibn Al-Khattab, Uthman Ibn Affan, Ali Ibn Abi Talib, Talha Ibn Ubaydullah, Zubair Ibn Al-Awwam, Abdur Rahman Ibn Awf, Sa'd Ibn Abi Waqqas, Sa'id Ibn Zayd,
 and Abu Ubaidah Ibn Al-Jarrah (may Allah be pleased with them all).</p>
 
-<h3 style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">3. Why were these ten companions promised Paradise?</h3>
+<h3 id="faq-3" style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">3. Why were these ten companions promised Paradise?</h3>
 <p>These companions were promised Paradise because of their exceptional faith, early acceptance of Islam, immense sacrifices, unwavering loyalty to Prophet Muhammad <span style="font-size: 25px; display: inline-block; transform: translateY(3px); line-height: 1;">&#65018;</span>, and their outstanding
 contributions to the early Muslim community. Their promise of Paradise is recorded in an authentic hadith narrated by Sa'id Ibn Zayd (RA) himself — <a href="hadith.html">read the full hadith here</a>.</p>
 
-<h3 style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">4. How many of the Ten Companions later became Caliphs?</h3>
+<h3 id="faq-4" style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">4. How many of the Ten Companions later became Caliphs?</h3>
 <p>Four of the Ten Companions Promised Paradise became Rashidun Caliphs: Abu Bakr As-Siddiq, Umar Ibn Al-Khattab, Uthman Ibn Affan, and Ali Ibn Abi Talib.</p>
 
-<h3 style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">5. Did other companions receive glad tidings of Paradise outside of this specific list?</h3>
+<h3 id="faq-5" style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">5. Did other companions receive glad tidings of Paradise outside of this specific list?</h3>
 <p>Yes, several other companions were promised Paradise individually on different occasions, such as Khadijah bint Khuwaylid, Fatima Az-Zahra, Hasan and Husayn, and Bilal ibn Rabah (RA), but the Al-Ashara Al-Mubashshara refers strictly to the group of ten mentioned together in a single, distinct hadith.</p>
 
-<h3 style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">6. Who was the youngest member among the Al-Ashara Al-Mubashshara?</h3>
+<h3 id="faq-6" style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">6. Who was the youngest member among the Al-Ashara Al-Mubashshara?</h3>
 <p>Sa'id ibn Zayd (RA) is generally recognized as the youngest member of the group, having embraced Islam when he was just a teenager alongside his wife, Fatima bint al-Khattab (the sister of Umar ibn al-Khattab).</p>
 
-<h3 style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">7. Which of these ten companions was the first to draw blood in defense of Islam?</h3>
+<h3 id="faq-7" style="color:#0b5d35;font-family:'Cinzel',serif;font-size:24px;margin-bottom:10px;">7. Which of these ten companions was the first to draw blood in defense of Islam?</h3>
 <p>Sa'd ibn Abi Waqqas (RA) holds this unique distinction. During the early days of Islam in Mecca, while praying in a secluded valley, a group of idolaters insulted and attacked the Muslims. Sa'd defended the group by striking an attacker with the jawbone of a camel, shedding the first blood in Islamic history.</p>
 </section>
 
@@ -590,7 +592,42 @@ const pages = [
         url: "abu-ubaidah.html"
     },
     {
-        title: "FAQ",
+        title: "FAQ: What does Al-Ashara Al-Mubashshara mean?",
+        description: "The Ten Who Were Given Glad Tidings",
+        url: "index.html#faq-1"
+    },
+    {
+        title: "FAQ: Who are the Al-Ashara Al-Mubashshara?",
+        description: "The ten companions given the glad tidings of Paradise",
+        url: "index.html#faq-2"
+    },
+    {
+        title: "FAQ: Why were these ten companions promised Paradise?",
+        description: "Faith, sacrifice, and loyalty to the Prophet ﷺ",
+        url: "index.html#faq-3"
+    },
+    {
+        title: "FAQ: How many of the Ten became Caliphs?",
+        description: "Abu Bakr, Umar, Uthman, and Ali became Rashidun Caliphs",
+        url: "index.html#faq-4"
+    },
+    {
+        title: "FAQ: Other companions promised Paradise",
+        description: "Khadijah, Fatima, Hasan, Husayn, and Bilal (RA)",
+        url: "index.html#faq-5"
+    },
+    {
+        title: "FAQ: Youngest member of the Ten",
+        description: "Sa'id ibn Zayd (RA) was the youngest",
+        url: "index.html#faq-6"
+    },
+    {
+        title: "FAQ: Who first drew blood in defense of Islam?",
+        description: "Sa'd ibn Abi Waqqas (RA)",
+        url: "index.html#faq-7"
+    },
+    {
+        title: "FAQ (All Questions)",
         description: "Frequently Asked Questions",
        url: "index.html#faq"
     }
